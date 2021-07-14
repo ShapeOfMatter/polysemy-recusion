@@ -1,8 +1,8 @@
 module Main where
 
-import Lib
+-- import EarlyTests
+import SndTests
 
 main :: IO ()
-main = do doUndefinedInput
-          doDummyRecursion
-          doRealRecursion
+main = do doParallelRecursion
+

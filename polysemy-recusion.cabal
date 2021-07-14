@@ -25,7 +25,9 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      EarlyTests
+      Pair
+      SndTests
   other-modules:
       Paths_polysemy_recusion
   hs-source-dirs:
