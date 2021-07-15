@@ -12,6 +12,8 @@ instance Functor Pair where
 instance Applicative Pair where
   pure a = Pair a a
   (Pair f1 f2) <*> (Pair a1 a2) = Pair (f1 a1) (f2 a2)
+instance Foldable Pair where
+  foldr f b (Pair a1 a2) = a1 `f` (a2 `f` b)
 
 (!) :: Pair a -> Bool -> a
 (Pair a1 a2) ! b = if b then a2 else a1

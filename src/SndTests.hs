@@ -1,6 +1,7 @@
 module SndTests (
   doParallelRecursion,
   parallelEvaluation,
+  runUnsafeInputList,
   testProgram
 ) where
 
@@ -23,9 +24,10 @@ parallelEvaluation :: forall x a r.
                       (Sem r ([Pair x], a) -> Sem '[] ([Pair x], a)) ->
                       Pair (Sem (Output (Pair x) ': Input (Pair x) ': r) a) ->
                       Pair ([Pair x], a)
-parallelEvaluation handleRest sems = run . handleRest <$> (runUnsafeInputList <$> os <*> (runLazyOutputList <$> sems))
-  where os :: Pair [Pair x]
-        os = fst <$> (parallelEvaluation handleRest sems)
+parallelEvaluation handleRest sems = result
+  where withOutputs = runLazyOutputList <$> sems
+        result = run . handleRest <$> (runUnsafeInputList <$> (Pair o1s o2s) <*> withOutputs)
+        Pair o1s o2s = fst <$> result :: Pair [Pair x]
 
 
 testProgram :: forall r.

@@ -28,6 +28,7 @@ library
       EarlyTests
       Pair
       SndTests
+      TrdTests
   other-modules:
       Paths_polysemy_recusion
   hs-source-dirs:
@@ -44,7 +45,7 @@ library
       TypeApplications
       TypeOperators
       TypeFamilies
-  ghc-options: -fplugin=Polysemy.Plugin -Wall -O2
+  ghc-options: -fplugin=Polysemy.Plugin -Wall
   build-depends:
       base >=4.7 && <5
     , polysemy >=1.4
@@ -69,7 +70,7 @@ executable polysemy-recusion-exe
       TypeApplications
       TypeOperators
       TypeFamilies
-  ghc-options: -fplugin=Polysemy.Plugin -Wall -O2 -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -fplugin=Polysemy.Plugin -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , polysemy >=1.4
@@ -96,7 +97,7 @@ test-suite polysemy-recusion-test
       TypeApplications
       TypeOperators
       TypeFamilies
-  ghc-options: -fplugin=Polysemy.Plugin -Wall -O2 -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -fplugin=Polysemy.Plugin -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , polysemy >=1.4

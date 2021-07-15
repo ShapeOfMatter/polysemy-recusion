@@ -1,7 +1,7 @@
 module Main where
 
 -- import EarlyTests
-import SndTests
+import TrdTests
 
 main :: IO ()
 main = do doParallelRecursion
