@@ -39,8 +39,11 @@ default-extensions:
 
 dependencies:
 - base >= 4.7 && < 5
+- distributive >= 0.5.3 && < 0.7
+- fin >= 0.2
 - polysemy >= 1.4  
 - polysemy-plugin >= 0.3
+- vec >= 0.4
 
 library:
   source-dirs: src
