@@ -28,6 +28,7 @@ library
       EarlyTests
       FifthTests
       ForthTests
+      Instance
       Pair
       SndTests
       TrdTests
